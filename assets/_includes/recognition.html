@@ -18,7 +18,7 @@
     {{#each presskit.quotes}}
     <li class="quote">
       <blockquote class="quote__content" cite="{{link}}">
-        {{description}}
+        {{{description}}}
       </blockquote>
       <cite class="quote__author">
         {{name}}, <a href="{{link}}">{{website}}</a>
@@ -37,7 +37,7 @@
     {{#each presskit.additionals}}
     <dt>{{title}}</dt>
     <dd>
-      {{description}} <a href="{{link}}">{{domainURL link}}</a>.
+      {{{description}}} <a href="{{link}}">{{domainURL link}}</a>.
     </dd>
     {{/each}}
   </dl>

@@ -24,7 +24,7 @@
               <h2 id="features">Features</h2>
               <ul>
                 {{#each presskit.features}}
-                <li>{{.}}</li>
+                <li>{{{.}}}</li>
                 {{/each}}
               </ul>
               {{/if}}
@@ -32,11 +32,11 @@
             </article>
           </section>
 
-          {{>mailchimp}}
           {{>assets}}
           {{>widgets}}
           {{>recognition}}
           {{>about}}
+		  {{>mailchimp}}
           {{>team}}
         </main>
 

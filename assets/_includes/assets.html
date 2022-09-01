@@ -4,6 +4,10 @@
 
   {{#each presskit.trailers}}
   <div>
+  	{{#description}}
+	  <p>{{{.}}}</p>
+	{{/description}}
+  
     {{#youtube}}
     <p>
       <strong>{{../name}}</strong> — <a href="https://www.youtube.com/embed/{{trim .}}?rel=0">YouTube</a> {{#if ../download}}| <a href="{{../download}}" target="_blank">Download</a>{{/if}}
@@ -29,6 +33,17 @@
         {{#download}}
         <p>
           <strong>{{../name}}</strong> — <a href="{{../download}}" target="_blank">Download</a>
+		  
+		  {{#if ../isVideoHosted}}
+		  <div class="video-player">
+			  <video class="video-player__frame" {{#if ../attributes}}{{{../attributes}}}{{/if}} poster="{{../download}}.thumb.png">
+				<source src="{{../download}}" type="video/mp4">
+				<source src="{{../download}}.webm" type="video/webm">
+				<source src="{{../download}}.ogv" type="video/ogg">
+			  </video>
+		  </div>
+		  {{/if}}
+
         </p>
         {{/download}}
       {{/unless}}

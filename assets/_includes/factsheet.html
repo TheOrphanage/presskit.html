@@ -112,13 +112,6 @@
     {{/each}}
     {{/if}}
 
-    {{#if hasWebsite}}
-    <dt>Website:</dt>
-    <dd>
-      <a href="{{presskit.website}}">{{prettyURL presskit.website}}</a>
-    </dd>
-    {{/if}}
-
     {{#if hasPrices}}
     <dt>Regular Price:</dt>
     {{#each presskit.prices}}
@@ -140,6 +133,22 @@
     <dt>{{type}} of:</dt>
     <dd>
       <a href="{{permalink path}}">{{text}}</a>
+    </dd>
+    {{/each}}
+    {{/if}}
+	
+	{{#if hasWebsite}}
+    <dt>Website:</dt>
+    <dd>
+      <a href="{{presskit.website}}">{{prettyURL presskit.website}}</a>
+    </dd>
+    {{/if}}
+	
+	{{#if hasSocials}}
+    <dt>Social:</dt>
+    {{#each presskit.socials}}
+    <dd>
+      <a href="{{link}}">{{name}}</a>
     </dd>
     {{/each}}
     {{/if}}

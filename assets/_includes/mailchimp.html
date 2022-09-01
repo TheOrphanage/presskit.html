@@ -1,4 +1,4 @@
-{{#if presskit.widgets.mailchimp}}
+{{#if presskit.mailchimp}}
 <section class="block">
   <h2 id="mailing-list">Mailing List</h2>
 
@@ -13,11 +13,15 @@
   </style>
 
   <div id="mc_embed_signup">
-    <form action="{{trim presskit.widgets.mailchimp}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <form action="{{trim presskit.mailchimp}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
       	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cb1093a5798d3677ea320108b_55e71ae780" tabindex="-1" value=""></div>
+		
+		<input type="checkbox" id="gdpr[10059]" name="gdpr[10059]" required value="Y"><label for="gdpr[10059]" class="mailchimp-form-label">I agree to receive emails from {{#if isCompany}}{{presskit.title}}{{else}}{{company.title}}{{/if}}</label>
+
+		
         <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"></div>
       </div>
     </form>
